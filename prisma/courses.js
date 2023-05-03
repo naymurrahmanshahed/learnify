@@ -1,5 +1,6 @@
 import prisma from "./prisma";
 
+//controller
 //GET ALL COURSES
 
 export const getAllCourses = async () => {
