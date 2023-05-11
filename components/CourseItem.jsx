@@ -1,6 +1,7 @@
 import { currentConverter } from "@/utils/currencyConverter";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "./Button";
 
 const CourseItem = ({ course }) => {
   return (
@@ -45,7 +46,12 @@ const CourseItem = ({ course }) => {
           <p className="text-lg font-semibold">
             {currentConverter(course.price, "en-GB", "EUR")}
           </p>
-          <Link href={`/courses/${course.id}`}>View Details</Link>
+          <Button
+            color="primary"
+            size="default"
+            href={`/courses/${course.id}`}
+            placeholder="View Details "
+          />
         </div>
       </div>
     </div>

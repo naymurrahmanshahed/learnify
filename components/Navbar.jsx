@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Button from "./Button";
 
 export const Navbar = () => {
   return (
     <div className="h-20 bg-black text-gray-400  flex items-center">
-      <div className=" wrapper flex justify-between ">
+      <div className=" wrapper flex justify-between items-center">
         <Link href="/" className="text-white font-semibold">
-          Cordemy
+          learnify
         </Link>
         <div className="flex gap-5">
           <Link href="/" className="hover:text-white transition-colors">
@@ -22,7 +23,12 @@ export const Navbar = () => {
           </Link>
         </div>
         <div>
-          <Link href="/login">Sign in </Link>
+          <Button
+            href="/login"
+            placeholder="Sign in"
+            color="secondary"
+            size="default"
+          />
         </div>
       </div>
     </div>
