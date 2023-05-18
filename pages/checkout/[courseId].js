@@ -23,6 +23,11 @@ const CheckOut = ({ course }) => {
       }));
     }
   }, []);
+
+  const handleCheckOut = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
   return (
     <div className="wrapper py-10 min-h-screen">
       <SectionTitle
@@ -31,7 +36,10 @@ const CheckOut = ({ course }) => {
         p={"Fill out this form to continue checkout"}
       />
       <div className="flex justify-center ">
-        <form className="flex flex-col gap-5 mt-10 w-full lg:w-[35rem] ">
+        <form
+          onSubmit={handleCheckOut}
+          className="flex flex-col gap-5 mt-10 w-full lg:w-[35rem] "
+        >
           <div className="form-control flex flex-col gap-2">
             <label htmlFor="name" className="cursor-pointer">
               Name
@@ -115,8 +123,12 @@ const CheckOut = ({ course }) => {
               readOnly
             />
           </div>
-          <button className="bg-black py-4 text-white rounded-lg hover:bg-gray-700 duration-300 ">
-            Proceed to checkout{" "}
+          <button
+            role="link"
+            type="submit"
+            className="bg-black py-4 text-white rounded-lg hover:bg-gray-700 duration-300 "
+          >
+            Proceed to checkout
           </button>
         </form>
       </div>

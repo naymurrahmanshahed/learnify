@@ -28,7 +28,7 @@ export const Navbar = () => {
         <div>
           {!session ? (
             <Button
-              href="/login"
+              href="/users/login"
               placeholder="Sign in"
               color="secondary"
               size="default"
