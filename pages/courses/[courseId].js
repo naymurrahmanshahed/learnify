@@ -46,7 +46,7 @@ const CourseDetails = ({ course }) => {
           </p>
           <p className="text-2xl">
             Price:
-            {currentConverter(course.price, "en-GB", "EUR")}
+            {currentConverter(course.price)}
           </p>
           <button
             onClick={handleEnroll}
