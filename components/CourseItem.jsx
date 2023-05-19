@@ -44,7 +44,7 @@ const CourseItem = ({ course }) => {
         </p>
         <div className="flex justify-between items-center">
           <p className="text-lg font-semibold">
-            {currencyConverter(course.price)}
+            {currentConverter(course.price)}
           </p>
           <Button
             color="primary"

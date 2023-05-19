@@ -28,6 +28,7 @@ async function createStripeCheckout(req, res) {
       mobile,
       address,
       courseTitle,
+      courseId,
       images: JSON.stringify(items.map((item) => item.cover)),
     },
   });
