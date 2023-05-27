@@ -1,5 +1,7 @@
 import { buffer } from "micro";
 import prisma from "@/prisma/prisma";
+import "@/preserve.entity.config.json";
+
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const endpointSecret = process.env.STRIPE_SIGNING_SECRET;
@@ -38,19 +40,21 @@ const fullfillOrder = async (session) => {
   return;
 };
 
-import "@/preserve.entity.config.json";
-
 async function webhook(req, res) {
+  //stripe er event theke web hook er end point a post request pathano hocche
   if (req.method === "POST") {
+    //event data paoyar jnno buffer k request daoya hocche
     const requestBuffer = await buffer(req);
-
+    //payload er mdde data ase
     const payload = requestBuffer.toString();
 
+    //stripe signature for buffer
     const signature = req.headers["stripe-signature"];
 
     let event;
 
     try {
+      //create event
       event = stripe.webhooks.constructEvent(
         payload,
         signature,

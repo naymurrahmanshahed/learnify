@@ -33,7 +33,6 @@ const CheckOut = ({ course }) => {
   const handleCheckOut = async (e) => {
     e.preventDefault();
     const stripe = await stripePromise;
-
     // SEND A POST REQ. TO THE SERVER
 
     const checkoutSession = await axios.post("/api/create-checkout-session", {
