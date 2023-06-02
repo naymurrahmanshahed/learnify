@@ -18,6 +18,11 @@ export const Navbar = () => {
           <Link href="/courses" className="hover:text-white transition-colors">
             Courses
           </Link>
+          {session && (
+            <Link href="/orders" className="hover:text-white trasition-color">
+              Orders
+            </Link>
+          )}
           <Link href="/about" className="hover:text-white transition-colors">
             About
           </Link>
@@ -25,6 +30,7 @@ export const Navbar = () => {
             Contact
           </Link>
         </div>
+
         <div>
           {!session ? (
             <Button
