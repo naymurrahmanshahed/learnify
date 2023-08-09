@@ -22,7 +22,9 @@ const CourseItem = ({ course }) => {
         <p className="flex gap-5 justify-between text-gray-500">
           <span>
             by{" "}
-            <span className="text-black font-semibold">{course.duration}</span>
+            <span className="text-black font-semibold">
+              {course.instructor}
+            </span>
           </span>
           <span>
             Duration:{" "}

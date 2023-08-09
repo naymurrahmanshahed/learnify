@@ -59,7 +59,7 @@ export const getServerSideProps = async (context) => {
     },
   });
 
-  if (!session && !customer) {
+  if (!session || !customer) {
     return {
       redirect: {
         destination: "/users/login",
